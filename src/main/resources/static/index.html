@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KrushiVigyan</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🌾 KrushiVigyan</h1>
+    <p>Smart Farming Expense & Profit Calculator</p>
+</header>
+
+
+<div class="container">
+
+    <!-- REGISTER -->
+
+    <div class="card">
+
+        <h2>📝 Register</h2>
+
+        <label>Name</label>
+        <input type="text" id="registerName" placeholder="Enter your name">
+
+        <label>Email</label>
+        <input type="email" id="registerEmail" placeholder="Enter email">
+
+        <label>Password</label>
+        <input type="password" id="registerPassword" placeholder="Enter password">
+
+        <button onclick="registerUser()">
+            Register
+        </button>
+
+        <p id="registerMessage"></p>
+
+    </div>
+
+
+    <!-- LOGIN -->
+
+    <div class="card">
+
+        <h2>🔐 Login</h2>
+
+        <label>Email</label>
+        <input type="email" id="loginEmail" placeholder="Enter email">
+
+        <label>Password</label>
+        <input type="password" id="loginPassword" placeholder="Enter password">
+
+        <button onclick="loginUser()">
+            Login
+        </button>
+
+        <p id="loginMessage"></p>
+
+    </div>
+
+
+    <!-- CROP INFORMATION -->
+
+    <div class="card">
+
+        <h2>🌱 Crop Information</h2>
+
+        <label>Farmer Name</label>
+        <input type="text" id="farmerName" placeholder="Enter farmer name">
+
+        <label>Select Crop</label>
+
+        <select id="crop">
+
+            <option value="Cotton">Cotton</option>
+            <option value="Wheat">Wheat</option>
+            <option value="Soybean">Soybean</option>
+            <option value="Onion">Onion</option>
+            <option value="Sugarcane">Sugarcane</option>
+            <option value="Other">Other</option>
+
+        </select>
+
+        <label>Land Area (Acres)</label>
+        <input type="number" id="area" placeholder="Enter land area">
+
+    </div>
+
+
+    <!-- EXPENSES -->
+
+    <div class="card">
+
+        <h2>💰 Expenses</h2>
+
+        <label>Seed Cost (₹)</label>
+        <input type="number" id="seed" value="0">
+
+        <label>Fertilizer Cost (₹)</label>
+        <input type="number" id="fertilizer" value="0">
+
+        <label>Pesticide Cost (₹)</label>
+        <input type="number" id="pesticide" value="0">
+
+        <label>Labour Cost (₹)</label>
+        <input type="number" id="labour" value="0">
+
+        <label>Tractor / Machinery Cost (₹)</label>
+        <input type="number" id="tractor" value="0">
+
+        <label>Water / Electricity Cost (₹)</label>
+        <input type="number" id="water" value="0">
+
+        <label>Other Expenses (₹)</label>
+        <input type="number" id="other" value="0">
+
+    </div>
+
+
+    <!-- PRODUCTION -->
+
+    <div class="card">
+
+        <h2>📦 Production & Sale</h2>
+
+        <label>Total Production (Quintal)</label>
+        <input type="number" id="production" placeholder="Enter production">
+
+        <label>Selling Price per Quintal (₹)</label>
+        <input type="number" id="price" placeholder="Enter price">
+
+        <button onclick="calculate()">
+            Calculate Profit / Loss
+        </button>
+
+    </div>
+
+
+    <!-- RESULT -->
+
+    <div class="result">
+
+        <h2>📊 Result</h2>
+
+        <p>
+            Total Expense:
+            ₹<span id="totalExpense">0</span>
+        </p>
+
+        <p>
+            Total Income:
+            ₹<span id="totalIncome">0</span>
+        </p>
+
+        <h3 id="profitLoss">
+            Profit / Loss: ₹0
+        </h3>
+
+        <button onclick="saveCurrentCalculation()">
+            💾 Save Calculation
+        </button>
+
+        <p id="saveMessage"></p>
+
+    </div>
+
+
+    <!-- HISTORY -->
+
+    <div class="card">
+
+        <h2>📜 Calculation History</h2>
+
+        <button onclick="loadHistory()">
+            Load History
+        </button>
+
+        <div id="history"></div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
